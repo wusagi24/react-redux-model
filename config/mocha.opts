@@ -1,0 +1,4 @@
+--compilers js:babel-register
+--require config/jsdom.setup.js
+--require babel-polyfill
+test/**/*.test.js
