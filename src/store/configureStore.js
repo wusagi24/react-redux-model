@@ -13,7 +13,7 @@ function configureStore(history) {
     sagaMW,
   ];
   if (process.env.NODE_ENV !== 'production') {
-    const createLogger = require('redux-logger').default; // eslint-disable-line global-require
+    const createLogger = require('redux-logger'); // eslint-disable-line global-require
     const loggerMW = createLogger();
     middlewares.push(loggerMW);
   }

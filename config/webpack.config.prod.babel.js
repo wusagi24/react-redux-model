@@ -14,6 +14,7 @@ export default {
   },
   output: {
     path: distRoot,
+    publicPath: '/',
     filename: '[name].min.js',
   },
   module: {
@@ -36,11 +37,11 @@ export default {
     new webpack.DefinePlugin({
       'process.env.NODE_ENV': JSON.stringify('production'),
     }),
-    // new webpack.optimize.UglifyJsPlugin({
-    //   output: {
-    //     comments: saveLicense,
-    //   },
-    // }),
+    new webpack.optimize.UglifyJsPlugin({
+      output: {
+        comments: saveLicense,
+      },
+    }),
     new webpack.optimize.AggressiveMergingPlugin(),
     new HtmlWebpackPlugin({
       inject: true,
