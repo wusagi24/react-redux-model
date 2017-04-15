@@ -1,5 +1,11 @@
 # React-Redux 上に、immutable.js を使って Model を作成する
 
+## プレビュー
+
+[https://wusagi24.github.io/react-redux-model/](https://wusagi24.github.io/react-redux-model/)
+
+SPサイズのみ
+
 ## これ何？
 
 **React** + **Redux** パターンに **immutable.js** を使って **Model** 層？を設けるっていうのをやってみたかった。
