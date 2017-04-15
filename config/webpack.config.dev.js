@@ -4,7 +4,7 @@ const path = require('path');
 
 const projectRoot = path.resolve('');
 const srcRoot = `${projectRoot}/src`;
-const distRoot = `${projectRoot}/dist`;
+const distRoot = `${projectRoot}/docs`;
 
 module.exports = {
   context: srcRoot,

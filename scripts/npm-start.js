@@ -6,7 +6,7 @@ const devServer = require('./tasks/webpack_dev_server');
 const webpackConfig = require('../config/webpack.config.dev');
 
 const assetsDir = 'assets';
-const distDir = 'dist';
+const distDir = 'docs';
 const devServerPort = 8080;
 
 const rootPath = path.resolve('');

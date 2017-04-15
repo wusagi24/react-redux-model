@@ -6,7 +6,7 @@ const webpackCompile = require('./tasks/webpack_api');
 const webpackConfig = require('../config/webpack.config.prod');
 
 const assetsDir = 'assets';
-const distDir = 'dist';
+const distDir = 'docs';
 
 const rootPath = path.resolve('');
 const distDirPath = `${rootPath}/${distDir}`;
