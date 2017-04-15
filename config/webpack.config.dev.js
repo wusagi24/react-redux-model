@@ -1,13 +1,12 @@
-import webpack from 'webpack';
-import HtmlWebpackPlugin from 'html-webpack-plugin';
-import saveLicense from 'uglify-save-license';
-import path from 'path';
+const webpack = require('webpack');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const path = require('path');
 
 const projectRoot = path.resolve('');
 const srcRoot = `${projectRoot}/src`;
 const distRoot = `${projectRoot}/dist`;
 
-export default {
+module.exports = {
   context: srcRoot,
   entry: {
     bundle: './index.jsx',
@@ -15,7 +14,7 @@ export default {
   output: {
     path: distRoot,
     publicPath: '/',
-    filename: '[name].min.js',
+    filename: '[name].js',
   },
   module: {
     rules: [
@@ -33,16 +32,17 @@ export default {
   resolve: {
     extensions: ['.js', '.jsx'],
   },
+  devtool: 'source-map',
+  devServer: {
+    contentBase: distRoot,
+    port: 8080,
+    historyApiFallback: true,
+    inline: true,
+  },
   plugins: [
     new webpack.DefinePlugin({
-      'process.env.NODE_ENV': JSON.stringify('production'),
+      'process.env.NODE_ENV': JSON.stringify('development'),
     }),
-    new webpack.optimize.UglifyJsPlugin({
-      output: {
-        comments: saveLicense,
-      },
-    }),
-    new webpack.optimize.AggressiveMergingPlugin(),
     new HtmlWebpackPlugin({
       inject: true,
       template: `${srcRoot}/index.html`,

@@ -44,8 +44,8 @@
     "webpack-dev-server": "^2.4.2"
   },
   "scripts": {
-    "start": "webpack-dev-server --config config/webpack.config.dev.babel.js --inline",
-    "build": "webpack --config config/webpack.config.prod.babel.js",
+    "start": "webpack-dev-server --config config/webpack.config.dev.js",
+    "build": "node scripts/npm-build.js",
     "dev-build": "webpack --config config/webpack.config.dev.babel.js",
     "lint": "eslint --ext .jsx --ext .js .",
     "test": "mocha --opts config/mocha.opts"
