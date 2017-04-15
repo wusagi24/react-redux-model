@@ -14,7 +14,7 @@ module.exports = {
   },
   output: {
     path: distRoot,
-    publicPath: '/',
+    publicPath: './',
     filename: '[name].min.js',
   },
   module: {
