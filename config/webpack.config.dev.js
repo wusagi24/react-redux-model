@@ -9,7 +9,7 @@ const distRoot = `${projectRoot}/dist`;
 module.exports = {
   context: srcRoot,
   entry: {
-    bundle: './index.jsx',
+    bundle: ['./index.jsx'],
   },
   output: {
     path: distRoot,
@@ -33,12 +33,6 @@ module.exports = {
     extensions: ['.js', '.jsx'],
   },
   devtool: 'source-map',
-  devServer: {
-    contentBase: distRoot,
-    port: 8080,
-    historyApiFallback: true,
-    inline: true,
-  },
   plugins: [
     new webpack.DefinePlugin({
       'process.env.NODE_ENV': JSON.stringify('development'),
