@@ -1,9 +1,13 @@
+const webpack = require('webpack');
+
 /**
  * webpack の Node.js API 経由でコンパイルするタスク
- * @param {webpack.Compiler} compiler
+ * @param {Object} webpackConfig - webpack の設定オブジェクト
  * @return {Promise}
  */
-function webpackCompile(compiler) {
+function webpackCompile(webpackConfig) {
+  const compiler = webpack(webpackConfig);
+
   return new Promise((resolve, reject) => {
     compiler.run((err, stats) => {
       if (err) {

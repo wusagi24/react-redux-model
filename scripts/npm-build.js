@@ -1,5 +1,4 @@
 const path = require('path');
-const webpack = require('webpack');
 
 const emptyDir = require('./tasks/empty_dir');
 const copyDir = require('./tasks/copy_dir');
@@ -13,9 +12,7 @@ const rootPath = path.resolve('');
 const distDirPath = `${rootPath}/${distDir}`;
 const assetDirPath = `${rootPath}/${assetsDir}`;
 
-const compiler = webpack(webpackConfig);
 const promise = Promise.resolve();
-
 promise.then(() => {
   console.log('=== build start ===');
 })
@@ -33,7 +30,7 @@ promise.then(() => {
   }
   console.log('complete task: copy dir');
 })
-.then(() => webpackCompile(compiler))
+.then(() => webpackCompile(webpackConfig))
 .then((output) => {
   if (output) {
     console.log(output);
