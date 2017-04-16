@@ -23,11 +23,11 @@ function ListController(props) {
   }
 
   const style = getStyle();
-  const sortTypeLabels = ['標準', 'タイトル（読み）', 'タイトル（文字）'];
+  const sortTypeLabels = ['リリース', 'タイトル（読み）', 'タイトル（文字）'];
   const closeDialogButton = (
     <FlatButton
       label="close"
-      primary
+      secondary
       onTouchTap={props.handleDialogClose}
     />
   );
@@ -52,6 +52,7 @@ function ListController(props) {
           <FlatButton
             key={sortKey}
             label={sortTypeLabels[key]}
+            disabled={sortKey === props.selectedSortType}
             fullWidth
             onTouchTap={() => {
               props.onSort(sortKey);
@@ -62,11 +63,13 @@ function ListController(props) {
         <FlatButton
           label="昇順"
           onTouchTap={props.onSortAsc}
+          disabled={props.orderTypeList.get(0) === props.selectedOrderType}
           style={style.orderButton}
         />
         <FlatButton
           label="降順"
           onTouchTap={props.onSortDesc}
+          disabled={props.orderTypeList.get(1) === props.selectedOrderType}
           style={style.orderButton}
         />
       </Dialog>
