@@ -50,6 +50,9 @@ class ListControllerContainer extends React.Component {
       <ListController
         isOpened={this.state.isOpened}
         sortTypeList={MusicList.sortTypeList}
+        orderTypeList={MusicList.orderTypeList}
+        selectedSortType={this.props.musicList.get('sortType')}
+        selectedOrderType={this.props.musicList.get('orderType')}
         onSortAsc={this.onSortAsc}
         onSortDesc={this.onSortDesc}
         onSort={this.onSort}
