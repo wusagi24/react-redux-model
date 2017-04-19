@@ -4,6 +4,20 @@ import FlatButton from 'material-ui/FlatButton';
 import FloatingActionButton from 'material-ui/FloatingActionButton';
 import SwapVert from 'material-ui/svg-icons/action/swap-vert';
 import Divider from 'material-ui/Divider';
+import { List } from 'immutable';
+
+const propTypes = {
+  isOpened: React.PropTypes.bool.isRequired,
+  selectedSortType: React.PropTypes.string.isRequired,
+  selectedOrderType: React.PropTypes.string.isRequired,
+  sortTypeList: React.PropTypes.instanceOf(List).isRequired,
+  orderTypeList: React.PropTypes.instanceOf(List).isRequired,
+  onSort: React.PropTypes.func.isRequired,
+  onSortAsc: React.PropTypes.func.isRequired,
+  onSortDesc: React.PropTypes.func.isRequired,
+  handleDialogOpen: React.PropTypes.func.isRequired,
+  handleDialogClose: React.PropTypes.func.isRequired,
+};
 
 function ListController(props) {
   function getStyle() {
@@ -76,5 +90,7 @@ function ListController(props) {
     </div>
   );
 }
+
+ListController.propTypes = propTypes;
 
 export default ListController;

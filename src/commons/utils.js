@@ -1,17 +1,52 @@
-function baseComparator(a, b) {
+/**
+ * シンプルなコンパレータ関数
+ * @param {any} a
+ * @param {any} b
+ * @return {number} コンパレータ出力
+ */
+export function baseComparator(a, b) {
   if (a < b) return -1;
   if (a > b) return 1;
   return 0;
 }
 
-export function strComparator(a, b) {
-  const strA = (typeof a === 'number') ? a.toString() : a;
-  const strB = (typeof b === 'number') ? b.toString() : b;
-  return baseComparator(strA, strB);
+/**
+ * @param {any} param
+ * @return {string}
+ */
+function safeToString(param) {
+  if (param instanceof Object) return JSON.stringify(param);
+  if (param.toString) return param.toString();
+  return '';
 }
 
+/**
+ * @param {any} param
+ * @return {number}
+ */
+function safeToNumber(param) {
+  if (typeof param === 'number') return param;
+  const intParam = parseInt(param, 10);
+  if (isNaN(intParam)) return -Infinity;
+  return intParam;
+}
+
+/**
+ * 引数を文字列として比較するコンパレータ
+ * @param {any} a
+ * @param {any} b
+ * @return {number} コンパレータ出力
+ */
+export function strComparator(a, b) {
+  return baseComparator(safeToString(a), safeToString(b));
+}
+
+/**
+ * 引数を数値として比較するコンパレータ
+ * @param {any} a
+ * @param {any} b
+ * @return {number} コンパレータ出力
+ */
 export function intComparator(a, b) {
-  const intA = (typeof a === 'string') ? parseInt(a, 10) : a;
-  const intB = (typeof b === 'string') ? parseInt(b, 10) : b;
-  return baseComparator(intA, intB);
+  return baseComparator(safeToNumber(a), safeToNumber(b));
 }

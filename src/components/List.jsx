@@ -3,6 +3,10 @@ import { List as MuiList, ListItem as MuiListItem } from 'material-ui/List';
 
 import ListControllerContainer from '../containers/ListControllerContainer';
 
+const propTypes = {
+  listData: React.PropTypes.object.isRequired,
+};
+
 function List(props) {
   const list = props.listData;
 
@@ -21,8 +25,6 @@ function List(props) {
   );
 }
 
-List.propTypes = {
-  listData: React.PropTypes.object.isRequired,
-};
+List.propTypes = propTypes;
 
 export default List;
