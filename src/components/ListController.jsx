@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import Dialog from 'material-ui/Dialog';
 import FlatButton from 'material-ui/FlatButton';
 import FloatingActionButton from 'material-ui/FloatingActionButton';
@@ -7,16 +8,16 @@ import Divider from 'material-ui/Divider';
 import { List } from 'immutable';
 
 const propTypes = {
-  isOpened: React.PropTypes.bool.isRequired,
-  selectedSortType: React.PropTypes.string.isRequired,
-  selectedOrderType: React.PropTypes.string.isRequired,
-  sortTypeList: React.PropTypes.instanceOf(List).isRequired,
-  orderTypeList: React.PropTypes.instanceOf(List).isRequired,
-  onSort: React.PropTypes.func.isRequired,
-  onSortAsc: React.PropTypes.func.isRequired,
-  onSortDesc: React.PropTypes.func.isRequired,
-  handleDialogOpen: React.PropTypes.func.isRequired,
-  handleDialogClose: React.PropTypes.func.isRequired,
+  isOpened: PropTypes.bool.isRequired,
+  selectedSortType: PropTypes.string.isRequired,
+  selectedOrderType: PropTypes.string.isRequired,
+  sortTypeList: PropTypes.instanceOf(List).isRequired,
+  orderTypeList: PropTypes.instanceOf(List).isRequired,
+  onSort: PropTypes.func.isRequired,
+  onSortAsc: PropTypes.func.isRequired,
+  onSortDesc: PropTypes.func.isRequired,
+  handleDialogOpen: PropTypes.func.isRequired,
+  handleDialogClose: PropTypes.func.isRequired,
 };
 
 function ListController(props) {

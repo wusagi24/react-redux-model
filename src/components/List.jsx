@@ -1,10 +1,11 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { List as MuiList, ListItem as MuiListItem } from 'material-ui/List';
 
 import ListControllerContainer from '../containers/ListControllerContainer';
 
 const propTypes = {
-  listData: React.PropTypes.object.isRequired,
+  listData: PropTypes.object.isRequired,
 };
 
 function List(props) {

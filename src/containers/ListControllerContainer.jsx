@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 
 import ListController from '../components/ListController';
@@ -7,9 +8,9 @@ import MusicList from '../models/MusicList';
 
 class ListControllerContainer extends React.Component {
   static propTypes = {
-    listOrderAsc: React.PropTypes.func.isRequired,
-    listOrderDesc: React.PropTypes.func.isRequired,
-    listSort: React.PropTypes.func.isRequired,
+    listOrderAsc: PropTypes.func.isRequired,
+    listOrderDesc: PropTypes.func.isRequired,
+    listSort: PropTypes.func.isRequired,
   };
 
   constructor(props) {

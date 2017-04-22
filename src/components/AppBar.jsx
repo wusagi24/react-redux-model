@@ -1,8 +1,9 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import MuiAppBar from 'material-ui/AppBar';
 
 const propType = {
-  title: React.PropTypes.string,
+  title: PropTypes.string,
 };
 
 const defaultProps = {

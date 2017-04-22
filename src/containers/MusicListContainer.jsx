@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import List from '../components/List';
 import { requestMusicList } from '../actions/api';
@@ -7,7 +8,7 @@ import MusicList from '../models/MusicList';
 
 class MusicListContainer extends React.Component {
   static propTypes = {
-    requestMusicList: React.PropTypes.func.isRequired,
+    requestMusicList: PropTypes.func.isRequired,
   };
 
   componentDidMount() {
