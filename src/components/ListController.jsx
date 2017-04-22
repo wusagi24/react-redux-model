@@ -67,7 +67,7 @@ function ListController(props) {
           <FlatButton
             key={sortKey}
             label={sortTypeLabels[key]}
-            disabled={sortKey === props.selectedSortType}
+            primary={sortKey === props.selectedSortType}
             fullWidth
             onTouchTap={() => {
               props.onSort(sortKey);
@@ -78,13 +78,13 @@ function ListController(props) {
         <FlatButton
           label="昇順"
           onTouchTap={props.onSortAsc}
-          disabled={props.orderTypeList.get(0) === props.selectedOrderType}
+          primary={props.orderTypeList.get(0) === props.selectedOrderType}
           style={style.orderButton}
         />
         <FlatButton
           label="降順"
           onTouchTap={props.onSortDesc}
-          disabled={props.orderTypeList.get(1) === props.selectedOrderType}
+          primary={props.orderTypeList.get(1) === props.selectedOrderType}
           style={style.orderButton}
         />
       </Dialog>
