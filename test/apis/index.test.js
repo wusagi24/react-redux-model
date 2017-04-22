@@ -1,6 +1,6 @@
 import assert from 'assert';
 import { fetchMusicList } from '../../src/apis';
-import originData from '../../assets/json/songs.json';
+import originData from '../../assets/json/music.json';
 
 describe('API', () => {
   describe('fetchMusicList()', () => {

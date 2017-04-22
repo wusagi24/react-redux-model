@@ -1,7 +1,14 @@
 import assert from 'assert';
-import * as actions from './../../src/actions/index';
-import * as types from './../../src/constants/ActionTypes';
+import * as allActions from '../../src/actions';
+import * as apiActions from '../../src/actions/api';
+import * as musicListActions from '../../src/actions/musicList';
 
-describe('ActionCreator', () => {
-  it('ActionCreator のテスト');
+describe('ActionCreators - index', () => {
+  it('一括 export が正しく行われている', () => {
+    const actions = {
+      ...apiActions,
+      ...musicListActions,
+    };
+    assert.deepEqual(actions, allActions);
+  });
 });

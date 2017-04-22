@@ -49,13 +49,13 @@ class ListControllerContainer extends React.Component {
     return (
       <ListController
         isOpened={this.state.isOpened}
-        sortTypeList={MusicList.sortTypeList}
-        orderTypeList={MusicList.orderTypeList}
         selectedSortType={this.props.musicList.get('sortType')}
         selectedOrderType={this.props.musicList.get('orderType')}
+        sortTypeList={MusicList.sortTypeList}
+        orderTypeList={MusicList.orderTypeList}
+        onSort={this.onSort}
         onSortAsc={this.onSortAsc}
         onSortDesc={this.onSortDesc}
-        onSort={this.onSort}
         handleDialogOpen={this.handleDialogOpen}
         handleDialogClose={this.handleDialogClose}
       />

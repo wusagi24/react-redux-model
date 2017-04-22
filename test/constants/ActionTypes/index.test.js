@@ -6,12 +6,11 @@ import * as musicListActionTypes from '../../../src/constants/ActionTypes/musicL
 
 describe('ActionTypes', () => {
   let types = {};
-  before((done) => {
+  before(() => {
     types = {
       ...apiActionTypes,
       ...musicListActionTypes,
     };
-    done();
   });
 
   it('値に重複がない', () => {

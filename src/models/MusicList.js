@@ -42,10 +42,10 @@ class MusicList extends MusicListRecord {
   }
 
   /**
-   * @param {string} sortType
+   * @param {string} [sortType=id]
    * @return {MusicList}
    */
-  sortList(sortType) {
+  sortList(sortType = 'id') {
     if (sortType === this.get('sortType')) {
       return this;
     }
@@ -72,10 +72,10 @@ class MusicList extends MusicListRecord {
   }
 
   /**
-   * @param {string} order
+   * @param {string} [order=asc]
    * @return {MusicList}
    */
-  sortListOrder(order) {
+  sortListOrder(order = 'asc') {
     if (order === this.get('orderType')) {
       return this;
     }

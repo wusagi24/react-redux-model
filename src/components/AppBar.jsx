@@ -1,6 +1,14 @@
 import React from 'react';
 import MuiAppBar from 'material-ui/AppBar';
 
+const propType = {
+  title: React.PropTypes.string,
+};
+
+const defaultProps = {
+  title: '',
+};
+
 function AppBar(props) {
   function getStyle() {
     return {
@@ -31,12 +39,8 @@ function AppBar(props) {
   );
 }
 
-AppBar.propTypes = {
-  title: React.PropTypes.string,
-};
+AppBar.propTypes = propType;
 
-AppBar.defaultProps = {
-  title: '',
-};
+AppBar.defaultProps = defaultProps;
 
 export default AppBar;
